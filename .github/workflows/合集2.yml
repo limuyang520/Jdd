@@ -60,9 +60,7 @@ jobs:
           DDQ_NOTIFY_CONTROL: ${{ secrets.DDQ_NOTIFY_CONTROL }}
           JD_CASH_SHARECODES: ${{ secrets.JD_CASH_SHARECODES }}
           CASH_NOTIFY_CONTROL: ${{ secrets.CASH_NOTIFY_CONTROL }}
-          JD_CASH_SHARECODES: ${{ secrets.JD_CASH_SHARECODES }}
-          JD_CASH_SHARECODES: ${{ secrets.JD_CASH_SHARECODES }}
-          JD_CASH_SHARECODES: ${{ secrets.JD_CASH_SHARECODES }}
+
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
