@@ -39,6 +39,8 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+          
           MONEY_TREE_SELL_FRUIT: ${{ secrets.MONEY_TREE_SELL_FRUIT }} #摇钱树是否卖出金果,true卖出，false不卖出
           MONEYTREE_NOTIFY_CONTROL: ${{ secrets.MONEYTREE_NOTIFY_CONTROL }}
           

@@ -40,6 +40,7 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
           
           JDJOY_SHARECODES: ${{ secrets.JDJOY_SHARECODES }}
           JDJOY_APPLYJDBEAN: ${{ secrets.JDJOY_APPLYJDBEAN }}

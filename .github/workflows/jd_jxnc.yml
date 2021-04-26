@@ -39,6 +39,7 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
           
           JXNC_SHARECODES: ${{ secrets.JXNC_SHARECODES }}
           JXNC_NOTIFY_LEVEL: ${{ secrets.JXNC_NOTIFY_LEVEL }} #通知级别 0=不通知;1=本次获得水滴>0;2=任务执行;3=任务执行+未种植种子; 脚本默认值=3

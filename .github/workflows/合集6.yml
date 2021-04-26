@@ -44,6 +44,7 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
           
           JD_CASH_SHARECODES: ${{ secrets.JD_CASH_SHARECODES }}
           #微信酱
