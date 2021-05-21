@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jd_jump 跳跳乐瓜分京豆
+name: A7 店铺签到
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '3 16,0,4 * * *'
+    - cron: '0 16 * * *' #此处为UTC-0时间
   watch:
     types: started
   repository_dispatch:
-    types: jd_jump
+    types: Heji7
 jobs:
   build:
 
@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/nbzongzong/jd_scripts1207.git ~/scripts
+          git clone https://github.com/hajiuhajiu/jdsign1112.git ~/scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -31,17 +31,23 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【跳跳乐瓜分京豆】'
+      - name: '运行 【店铺签到】'
         run: |
           cd  ~/scripts
           npm install
-          node jd_jump.js
+          node jd_dpqd.js.
+          node jd_dpqd2.js
+          
+          
+        
+          
+          
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
-         
           
+
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
