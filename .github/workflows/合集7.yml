@@ -35,7 +35,7 @@ jobs:
         run: |
           cd  ~/scripts
           npm install
-          node jd_dpqd.js.
+          node jd_dpqd.js
           node jd_dpqd2.js
           
           
