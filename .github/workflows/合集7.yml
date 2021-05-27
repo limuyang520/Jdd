@@ -6,7 +6,7 @@ name: A7 星推官6-18,店铺签到
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 16 * * *' #此处为UTC-0时间
+    - cron: '0 16,20 * * *' #此处为UTC-0时间
   watch:
     types: started
   repository_dispatch:
