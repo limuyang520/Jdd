@@ -1,12 +1,12 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: A6 二次执行 摇京豆,领现金,领金贴
+name: A6 二次执行 摇京豆,领现金,领金贴,点点券
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 14 * * *' #此处为UTC-0时间
+    - cron: '0 14 * * *' #此处为UTC-0时间
   # watch:
     # types: started
   repository_dispatch:
@@ -31,13 +31,14 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【二次执行 摇京豆,签到领现金,领金贴】'
+      - name: '运行 【二次执行 摇京豆,签到领现金,领金贴,点点券】'
         run: |
           cd  ~/scripts
           npm install
           node jd_club_lottery.js
           node jd_cash.js
           node jd_jin_tie.js
+          node jd_necklace.js
         
           
           
