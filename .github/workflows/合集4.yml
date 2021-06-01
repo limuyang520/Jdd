@@ -36,6 +36,7 @@ jobs:
           cd  ~/scripts
           npm install
           node jd_bean_change.js
+          node HBDetail.js
           node adolf_flp.js     # 6-18
           
           
