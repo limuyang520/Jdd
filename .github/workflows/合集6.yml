@@ -6,7 +6,7 @@ name: A6 二次执行 摇京豆,领现金,领金贴,点点券,极速版红包,�
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 12 3-6 6 *'
+    - cron: '0 12 3-10 6 *'
     - cron: '0 14 * * *' #此处为UTC-0时间
   # watch:
     # types: started
