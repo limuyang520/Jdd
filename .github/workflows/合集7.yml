@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: A2 多合一签到,赚赚,点点券(暂停),进店领豆,领现金,摇京豆脚本,秒秒币,幸运大转盘,领金贴,极速版红包
+name: A7 jx领88元红包6-30,新潮品牌狂欢,明星小店6-10
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 16 * * *' #此处为UTC-0时间
-  watch:
-    types: started
+    - cron: '10 16 * * *' #此处为UTC-0时间
+  # watch:
+    # types: started
   repository_dispatch:
-    types: Heji2
+    types: Heji7
 jobs:
   build:
 
@@ -31,36 +31,23 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【京东多合一签到,京东赚赚,点点券,进店领豆,签到领现金,摇京豆脚本,京东秒秒币,幸运大转盘,领金贴,极速版红包】'
+      - name: '运行 【京喜领88元红包,新潮品牌狂欢,明星小店】'
         run: |
           cd  ~/scripts
           npm install
-          node jd_bean_sign.js
-          node jd_jdzz.js
-          #node jd_necklace.js
-          node jd_shop.js
-          node jd_cash.js
-          node jd_club_lottery.js
-          node jd_ms.js
-          node jd_market_lottery.js
-          node jd_jin_tie.js
-          node jd_speed_redpocke.js
+          node jd_jxlhb.js
+          node jd_mcxhd.js
+          node jd_star_shop.js
+          
+        
+          
           
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
           
-          JD_BEAN_STOP: ${{secrets.JD_BEAN_STOP}} #自定义延迟签到,单位毫秒. 默认分批并发无延迟. 延迟作用于每个签到接口, 如填入延迟则切换顺序签到(耗时较长)
-          JD_BEAN_SIGN_STOP_NOTIFY: ${{secrets.JD_BEAN_SIGN_STOP_NOTIFY}}
-          JD_BEAN_SIGN_NOTIFY_SIMPLE: ${{secrets.JD_BEAN_SIGN_NOTIFY_SIMPLE}}
-          JDZZ_SHARECODES: ${{ secrets.JDZZ_SHARECODES}}
-          JDZZ_NOTIFY_CONTROL: ${{ secrets.JDZZ_NOTIFY_CONTROL}}
-          DDQ_NOTIFY_CONTROL: ${{ secrets.DDQ_NOTIFY_CONTROL }}
-          JD_CASH_SHARECODES: ${{ secrets.JD_CASH_SHARECODES }}
-          CASH_NOTIFY_CONTROL: ${{ secrets.CASH_NOTIFY_CONTROL }}
-          CASH_EXCHANGE: ${{ secrets.CASH_EXCHANGE }}
-
+          
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
